@@ -5,7 +5,7 @@
 
 HOST='roteiroceara.com.br'
 USER='roteiroceara'
-PASS='fortalCEARA'
+PASS=''
 TABELA="roteiroceara2"
 
 echo "Inicilizando Atualização...."

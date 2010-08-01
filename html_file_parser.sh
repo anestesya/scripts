@@ -1,5 +1,5 @@
 #!/bin/bash
-# arquivo parser.sh
+#Arquivo parser.sh
 # Este script tem o objetivo, retirar algumas informações de arquivos .html
 # filtra diversas coisa no arquivo.
 
@@ -17,7 +17,7 @@ for i in ${colecao[@]};
    categoria=$i #nome base dos arquivos.
    link_categoria=$alink$categoria".html\" title=\"$categoria\">$categoria$flink"
    link_categoria=$aitem$link_categoria$fitem
-   echo "'$link_categoria'+"
+   echo $link_categoria
    #para cada arquivo da categoria
    for i in $(ls $categoria*); 
      do
@@ -33,7 +33,7 @@ for i in ${colecao[@]};
           do
               link_modelo=""
               link_modelo=$aitem$alink$arquivo\"" title=\"$linha_num $linha_nome\">"$i$flink$fitem
-	      echo "'$link_modelo'+"
+	      echo $link_modelo
         done
 
      done
