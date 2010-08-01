@@ -1,0 +1,24 @@
+#!/bin/bash
+
+colecao=(baby kids tweens)
+
+for i in ${colecao[@]};
+ do
+   echo "====================================================$i========================================================="
+   categoria=$i
+   
+   for i in $(ls $categoria*); 
+     do
+ 	linha=`cat $i | egrep "id_linha"`
+	echo "linha $linha" 
+ 	modelo_linha=`cat $i | egrep "class=\"num_ref\""`
+        echo "modelo $modelo_linha"	
+     done
+     
+   $linha=`cut -c13-5 $linha`
+   echo $linha
+ done
+ 
+
+#	<h1><span id="id_linha">218</span> <span id="nome_linha">Evolution</span></h1>
+#	<span class="num_ref">209.01-35</span>

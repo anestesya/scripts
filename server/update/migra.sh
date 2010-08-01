@@ -66,21 +66,12 @@ echo -e ""
    echo "Desativando plugins. ....."
       mv /home/roteiroceara/public/wp-content/plugins/advanced-category-excluder /home/roteiroceara/public/wp-content/plugins/advanced-category-exclude-old
       chmod 777 wp-content/
-
-      chmod 666 /home/roteiroceara/public/wp-content/wp-cache-config.php
-      chmod 766 wp-content/cache
-      chmod +x wp-content/cache
-
+    
       echo -e "Acesse o painel na seção de plugins e tecle ENTER"
-      readagora só falta eu resolver pq o #nginx não está cacheando a minha página home? o_0
+      read
       echo -e "Ative o plugin so WP SUPER CACHE"
-      chmod 644 /home/roteiroceara/public/wp-content/wp-cache-config.php
       chmod 755 wp-content/
-      
-      chmod 777 /home/roteiroceara/public/wp-content/plugins/fresh-page/thirdparty/phpthumb/cache/
-      chmod 777 /home/roteiroceara/public/wp-content/files_flutter/
-      chmod 777 /home/roteiroceara/public/wp-content/files_flutter/modules/
-      
+
       echo -e "Faça o teste do AB na página home, para saber se o cache está funcioinando."
       
      echo -e "Feito isso altere o rewrite do NGINX"
