@@ -3,10 +3,10 @@
 #autor: tadeu
 #email: anestesya@gmail.com
 
-HOST='roteiroceara.com.br'
-USER='roteiroceara'
-PASS='fortalCEARA'
-TABELA="roteiroceara2"
+HOST='wordpress.com.br'
+USER='usuario'
+PASS='senha'
+TABELA="tabela"
 
 echo "Inicilizando Atualização...."
 echo -e ""
@@ -18,14 +18,14 @@ echo -e ""
    echo -e ""
    echo -e "atualizando banco de dados......"
    echo -e "digite a senha para sua conta no servidor web"
-   `ssh $USER@$HOST 'mysqldump -u roteiroceara -h hname.roteiroceara.uol.com.br -pfortalCEARA roteiroceara2 > /home/roteiroceara/roteiroceara2.sql'`
+   `ssh $USER@$HOST 'mysqldump -u USER -h hname.$HOST -p$PASS $TABELA > /home/roteiroceara/tabela_bkp.sql'`
    
    echo -e ""
-   echo -e "transferindo banco.... roteiroceara.uol.com.br"
+   echo -e "transferindo banco.... $HOST"
     mkdir sql 
     rm -f sql/*  
    echo -e "digite a senha para sua conta no servidor web"
-    scp $USER@$HOST:/home/roteiroceara/roteiroceara2.sql sql/
+    scp $USER@$HOST:/home/$HOST/tabela_bkp.sql sql/
    
    ##testa para saber se o arquivo existe.
    if [ /home/roteiroceara/public/sql/roteiroceara2.sql ];
