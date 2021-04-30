@@ -17,6 +17,12 @@ Add part of bash_profileHigh in your ~/.bash_profile (OS X) or ~/.bashrc in your
 ## Learn More
 In order to grow your ideas of an Cannabis Rights and Cannabis Culture, me, create this repo to guide new and old programmers how me, to get less prejudice.
 
+Get start in Wikipedia: 
+ - [Legality of Cannabis](https://en.wikipedia.org/wiki/Legality_of_cannabis)
+ - [Effects of Cannabis](https://en.wikipedia.org/wiki/Effects_of_cannabis)
+ - [Cannabis Culture](https://en.wikipedia.org/wiki/Cannabis_culture)
+
+
 ## Online Stores
 - [Seattle Hashtag](https://shop.seattlehashtag.com/fremont)
 - [Abrace Esperança](https://www.abraceesperanca.org.br)
@@ -24,12 +30,15 @@ In order to grow your ideas of an Cannabis Rights and Cannabis Culture, me, crea
 ## My Personal Projects
 In 2021 i get an idea to use my programmer web skills to introduce me into Cannabis Economy. Starting with my Piteira`s Project and this repo with Bash Theme for Canabis Heavy Users.
 
-
 - [Tad Target - Big Data & Marketing - a modern High Company XD ](https://www.tadtarget.com/)
 - [Blog Tad Target](https://blog.tadtarget.com)
 
-## Copyright
+## Copyright and Get High
 
 (C) 2021 Tadeu Luis
 <br>
 [Blog](https://medium.com/@anestesya)
+<p align="center">
+<img src="https://en.wikipedia.org/wiki/File:Marijuana-Cannabis-Weed-Bud-Gram.jpg" alt="A dried cannabis flower.
+" title="A dried cannabis flower.">
+</p>
