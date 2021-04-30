@@ -1,7 +1,54 @@
 #High Rick Sanchez PS1 Theme for Terminal in OSX and Linux
+
+#OSX Tricks
+# Get macOS Software Updates, and update installed Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g;'
+
+# Get week number
+alias week='date +%V'
+
+#to get more interesting OSX System command aliases to help you to maintainence your PC
+#visit github file: https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
+
+alias g="git"
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null; then
+	complete -o default -o nospace -F _git g;
+fi;
+
+#Define um comando de git aqui.
+_ps1_git() {
+  if command -v __git_ps1 >/dev/null 2>/dev/null ; then
+    if [[ "$__LOCAL_GIT_STATUS" =~ On\ branch\ ([^[:space:]]+) ]]; then
+      branch=${BASH_REMATCH[1]}
+      test "$branch" != master || branch=' '
+    else
+      branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`)"
+    fi
+    printf "$(__git_ps1)"
+  fi
+  return 0
+}
+
+#Mostra no Git onde estamos
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+#GIT PS1 THEMA
+gitPS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]$(parse_git_branch)\[\033[0;36m\] @\[\033[0;36m\]\w\[\033[0;32m\]$(_ps1_git)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
+
+
+
 #SH High
 
-cbbong='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(🌿⚗️)'
+#Mostra no Git onde estamos
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+cbbong='\033[32m[🚬_\|/_🚬 \$(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(🌿⚗️)'
 cbjoint='\033[32m[🚬@\n\033[35m:\w\033[32m]$\033[0m(🌿🚬)'
 cbhigh='\033[32m[🚬🚬@\n\033[35m:\w\033[32m]$\033[0m(😌💨)'
 cbstoned='\033[32m[_\|/_@\n\033[35m:\w\033[32m]$\033[0m(😳🍃)'
@@ -9,6 +56,8 @@ cbcooked='\033[32m[@\n\033[35m:\w\033[32m]$\033[0m(😶🍳)'
 cbblazed='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😳🔥)'
 cbhexaling='\033[32m[_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😮💨)'
 cbfaceclouds='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😶🌫️)'
+
+
 
 # UID 0 is the root user
 if [[ $(id -u) -eq 0 ]];then
