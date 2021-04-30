@@ -1,0 +1,24 @@
+#High Rick Sanchez PS1 Theme for Terminal in OSX and Linux
+#SH High
+
+cbbong='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(🌿⚗️)'
+cbjoint='\033[32m[🚬@\n\033[35m:\w\033[32m]$\033[0m(🌿🚬)'
+cbhigh='\033[32m[🚬🚬@\n\033[35m:\w\033[32m]$\033[0m(😌💨)'
+cbstoned='\033[32m[_\|/_@\n\033[35m:\w\033[32m]$\033[0m(😳🍃)'
+cbcooked='\033[32m[@\n\033[35m:\w\033[32m]$\033[0m(😶🍳)'
+cbblazed='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😳🔥)'
+cbhexaling='\033[32m[_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😮💨)'
+cbfaceclouds='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😶🌫️)'
+
+# UID 0 is the root user
+if [[ $(id -u) -eq 0 ]];then
+    # ps1 for root user
+    PS1='👿 [\u@\h \W]\$ '
+else
+    # ps1 for normal user
+    #PS1='\u@\W\$'
+    #PS1=$cbhigh
+    expression=($cbhigh $cbbong $cbjoint $cbstoned $cbcooked $cbblazed $cbhexaling $cbfaceclouds)
+    PS1=${expression[$RANDOM % ${#expression[@]} ]}
+	
+fi
