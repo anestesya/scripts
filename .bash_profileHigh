@@ -10,6 +10,13 @@ alias week='date +%V'
 #to get more interesting OSX System command aliases to help you to maintainence your PC
 #visit github file: https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
 
+#to enable git completion 
+# find in your system, and copy to /usr/local/etc/bash_completion.d/git-completion.bash 
+# sudo find / -type f -name "git-completion.bash" &>/dev/null
+#. /usr/local/etc/bash_completion.d/git-completion.bash
+#GIT PS1 THEMA Corrigir isso ( precisa instalar o git completion file corretamente)
+#gitPS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]$(parse_git_branch)$(__git_ps1)$(git symbolic-ref HEAD)\[\033[0;36m\] @\[\033[0;36m\]\w\[\033[0;32m\]\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
+
 alias g="git"
 
 # Enable tab completion for `g` by marking it as an alias for `git`
@@ -17,47 +24,20 @@ if type _git &> /dev/null; then
 	complete -o default -o nospace -F _git g;
 fi;
 
-#Define um comando de git aqui.
-_ps1_git() {
-  if command -v __git_ps1 >/dev/null 2>/dev/null ; then
-    if [[ "$__LOCAL_GIT_STATUS" =~ On\ branch\ ([^[:space:]]+) ]]; then
-      branch=${BASH_REMATCH[1]}
-      test "$branch" != master || branch=' '
-    else
-      branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`)"
-    fi
-    printf "$(__git_ps1)"
-  fi
-  return 0
-}
-
 #Mostra no Git onde estamos
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-#GIT PS1 THEMA
-gitPS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]$(parse_git_branch)\[\033[0;36m\] @\[\033[0;36m\]\w\[\033[0;32m\]$(_ps1_git)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
-
-
 
 #SH High
-
-#Mostra no Git onde estamos
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-cbbong='\033[32m[🚬_\|/_🚬 \$(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(🌿⚗️)'
-cbjoint='\033[32m[🚬@\n\033[35m:\w\033[32m]$\033[0m(🌿🚬)'
-cbhigh='\033[32m[🚬🚬@\n\033[35m:\w\033[32m]$\033[0m(😌💨)'
-cbstoned='\033[32m[_\|/_@\n\033[35m:\w\033[32m]$\033[0m(😳🍃)'
-cbcooked='\033[32m[@\n\033[35m:\w\033[32m]$\033[0m(😶🍳)'
-cbblazed='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😳🔥)'
-cbhexaling='\033[32m[_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😮💨)'
-cbfaceclouds='\033[32m[🚬_\|/_🚬@\n\033[35m:\w\033[32m]$\033[0m(😶🌫️)'
-
-
+cbbong='\033[32m[🚬_\|/_🚬  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(🌿⚗️) '
+cbjoint='\033[32m[🚬 $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(🌿🚬) '
+cbhigh='\033[32m[🚬🚬  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😌💨) '
+cbstoned='\033[32m[_\|/_  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😳🍃) '
+cbcooked='\033[32m[ $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😶🍳) '
+cbblazed='\033[32m[🚬_\|/_🚬  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😳🔥) '
+cbhexaling='\033[32m[_\|/_🚬  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😮💨) '
+cbfaceclouds='\033[32m[🚬_\|/_🚬  $(parse_git_branch) @\n\033[35m:\w\033[32m]$\033[0m(😶🌫️) '
 
 # UID 0 is the root user
 if [[ $(id -u) -eq 0 ]];then
@@ -66,8 +46,6 @@ if [[ $(id -u) -eq 0 ]];then
 else
     # ps1 for normal user
     #PS1='\u@\W\$'
-    #PS1=$cbhigh
     expression=($cbhigh $cbbong $cbjoint $cbstoned $cbcooked $cbblazed $cbhexaling $cbfaceclouds)
-    PS1=${expression[$RANDOM % ${#expression[@]} ]}
-	
+    PS1=${expression[$RANDOM % ${#expression[@]} ]}	
 fi
