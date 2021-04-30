@@ -13,7 +13,7 @@ alias week='date +%V'
 #to enable git completion 
 # find in your system, and copy to /usr/local/etc/bash_completion.d/git-completion.bash 
 # sudo find / -type f -name "git-completion.bash" &>/dev/null
-#. /usr/local/etc/bash_completion.d/git-completion.bash
+. /usr/local/etc/bash_completion.d/git-completion.bash
 #GIT PS1 THEMA Corrigir isso ( precisa instalar o git completion file corretamente)
 #gitPS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]$(parse_git_branch)$(__git_ps1)$(git symbolic-ref HEAD)\[\033[0;36m\] @\[\033[0;36m\]\w\[\033[0;32m\]\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
 
