@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://instagram.fldb3-1.fna.fbcdn.net/v/t51.2885-15/e35/126912171_492866998319045_6111159386595503514_n.jpg?tp=1&_nc_ht=instagram.fldb3-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=Sw2uxXApe9AAX8qHNFV&edm=AP_V10EBAAAA&ccb=7-4&oh=e4a77140b756ae4b138a63ece9d6642a&oe=60B06640" alt="#ricksanchez" title="an Rick Sanchez Tribute">
+<img src="https://instagram.fldb3-1.fna.fbcdn.net/v/t51.2885-15/e35/126912171_492866998319045_6111159386595503514_n.jpg?tp=1&_nc_ht=instagram.fldb3-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=Sw2uxXApe9AAX8qHNFV&edm=AP_V10EBAAAA&ccb=7-4&oh=e4a77140b756ae4b138a63ece9d6642a&oe=60B06640" alt="#ricksanchez" title="an Rick Sanchez Tribute" width="120">
 </p>
 
 # High Rick Sanchez PS1 Theme for Terminal in OSX and Linux
@@ -39,6 +39,5 @@ In 2021 i get an idea to use my programmer web skills to introduce me into Canna
 <br>
 [Blog](https://medium.com/@anestesya)
 <p align="center">
-<img src="https://en.wikipedia.org/wiki/File:Marijuana-Cannabis-Weed-Bud-Gram.jpg" alt="A dried cannabis flower.
-" title="A dried cannabis flower.">
+<img src="https://cdn.pixabay.com/photo/2018/11/14/12/30/weed-3815124_960_720.jpg" alt="A dried cannabis flower" title="A dried cannabis flower." width="120">
 </p>
